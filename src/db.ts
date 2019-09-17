@@ -1,13 +1,30 @@
 import * as knex from 'knex'
 
+const psConfig = ({
+  client: 'pg',
+  connection: process.env.DATABASE_URL ? process.env.DATABASE_URL : {
+    host: 'localhost',
+    database: 'queencollection'
+  }
+})
+
+// const msqlConnection = {
+//   client: 'mysql',
+//   connection: {
+//     user: 'root',
+//     database: 'QueenCollection'
+//   }
+// }
+
 export class dbConnection {
-  dbInstance = knex({
-    client: 'mysql',
-    connection: {
-      user: 'root',
-      database: 'QueenCollection'
-    }
-  })
+  dbInstance: any;
+
+  constructor() {
+    this.dbInstance = knex(psConfig)
+
+    this.checkHealth()
+  }
+
 
   checkHealth = () => {
     this.dbInstance.raw('select 1+1 as result')
@@ -18,14 +35,14 @@ export class dbConnection {
       });
   }
 
-  getArtists = () => this.dbInstance('Artist').select()
+  getArtists = () => this.dbInstance('artists').select()
 
   getArtistTypes = (artistID: number) => this.dbInstance
     .distinct('t.id', 't.name')
     .select()
-    .from('type as t')
+    .from('types as t')
     .leftJoin(
-      'Discography_entry as e',
+      'entries as e',
       'e.type',
       't.id',
     )
@@ -35,7 +52,7 @@ export class dbConnection {
   getEntriesByArtistAndType = (artistID: number, typeID: number) =>
     this.dbInstance
       .select()
-      .from('Discography_entry')
+      .from('entries')
       .where({
         artist_id: artistID,
         type: typeID,
@@ -48,14 +65,14 @@ export class dbConnection {
   getReleases = (entry: number) =>
     this.dbInstance
       .select()
-      .from('Release')
+      .from('releases')
       .where({
         entry_id: entry
       })
 
   getRelease = (id: Number) =>
     this.dbInstance
-      .table('Release')
+      .table('releases')
       .first()
       .where({
         id
@@ -63,45 +80,45 @@ export class dbConnection {
 
   getEntry = (id: Number) =>
     this.dbInstance
-      .table('Discography_entry')
+      .table('entries')
       .first()
       .where({
         id
       })
 
   getLabels = () =>
-    this.dbInstance('Label')
+    this.dbInstance('labels')
       .select()
 
   getFormats = () =>
-    this.dbInstance('Format')
+    this.dbInstance('formats')
       .select()
 
   getCountries = () =>
-    this.dbInstance('Country')
+    this.dbInstance('countries')
       .select()
 
   addRelease = release =>
-    this.dbInstance('Release')
+    this.dbInstance('releases')
       .returning('id')
       .insert(release)
       .then(([release_id]) => ({ release_id }))
 
   updateRelease = release =>
-    this.dbInstance('Release')
+    this.dbInstance('releases')
       .where({ id: release.id })
       .update(release)
       .then(() => this.getRelease(release.id))
 
   getReleaseTracks = release_id =>
-    this.dbInstance('Composition as c')
+    this.dbInstance('compositions as c')
       .join(
-        'Track as t',
+        'tracks as t',
         'c.id',
         't.composition_id',
       )
       .join(
-        'Release_track as rt',
+        'release_tracks as rt',
         'rt.track_id',
         't.id'
       )
@@ -109,11 +126,7 @@ export class dbConnection {
       .where({ release_id })
 
   getCompositions = () =>
-    this.dbInstance('Composition').select()
+    this.dbInstance('compositions').select()
 }
 
-const connection = new dbConnection
-
-connection.checkHealth();
-
-export default connection
+export default (new dbConnection)

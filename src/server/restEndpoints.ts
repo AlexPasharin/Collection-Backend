@@ -7,7 +7,7 @@ const successHandler = res => data => res.set("Access-Control-Allow-Origin", "*"
 
 const errorHandler = (res, message: string) => err => {
   console.log(err.stack)
-  res.status(500).send(message)
+  res.set("Access-Control-Allow-Origin", "*").status(500).send(message)
 }
 
 export const setUpRestEndPoints = (app: Express, dBConnection: dbConnection) => {
