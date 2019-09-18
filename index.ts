@@ -2,7 +2,7 @@ import dBConnection from './src/db'
 import server from './src/server'
 
 const app = server(dBConnection)
-const PORT = 2000
+const PORT: any = process.env.PORT || 2000
 
 app.listen(PORT, err => {
   if (err) {
