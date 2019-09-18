@@ -1,5 +1,4 @@
 import { Express } from 'express'
-import * as cors from 'cors'
 
 import { dbConnection } from "../db"
 
