@@ -4,8 +4,8 @@
   "description": "express application to use with my queen collection mysql database",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon -e ts -w ./src -x npm run watch",
-    "watch": "ts-node ./index.ts",
+    "start": "ts-node ./index.ts",
+    "watch": "nodemon -e ts -w ./src -x npm run start",
     "lint": "tslint -p tsconfig.json",
     "ps": "ts-node ./postgres.ts",
     "make-seed": "knex seed:make",
