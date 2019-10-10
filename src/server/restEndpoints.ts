@@ -1,4 +1,5 @@
 import { Express } from 'express'
+import * as cors from 'cors'
 
 import { dbConnection } from "../db"
 
@@ -74,6 +75,33 @@ export const setUpRestEndPoints = (app: Express, dBConnection: dbConnection) => 
     dBConnection.getCountries()
       .then(successHandler(res))
       .catch(errorHandler(res, `Could not retrieve countries from the database`))
+  })
+
+  app.options('/rest/release', cors({ origin: process.env.CORS_ORIGIN_URL }))
+  app.post('/rest/release', cors({ origin: process.env.CORS_ORIGIN_URL }), (req, res) => {
+    dBConnection.addRelease(req.body)
+      .then(successHandler(res))
+      .catch(errorHandler(res, `Could not add release to the database`))
+  })
+
+  app.put('/rest/release', cors({ origin: process.env.CORS_ORIGIN_URL }), (req, res) => {
+    dBConnection.updateRelease(req.body)
+      .then(successHandler(res))
+      .catch(errorHandler(res, `Could not add update release`))
+  })
+
+  app.get('/rest/tracks', (req, res) => {
+    const { release_id } = req.query
+
+    dBConnection.getReleaseTracks(release_id)
+      .then(successHandler(res))
+      .catch(errorHandler(res, `Could not retrieve tracks of release with id ${release_id} from the database`))
+  })
+
+  app.get('/rest/compositions', (req, res) => {
+    dBConnection.getCompositions()
+      .then(successHandler(res))
+      .catch(errorHandler(res, `Could not retrieve compositions from the database`))
   })
 
   return app
