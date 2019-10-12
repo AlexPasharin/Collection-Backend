@@ -1,5 +1,9 @@
+import * as dotenv from 'dotenv'
+
 import dBConnection from './src/db'
 import server from './src/server'
+
+dotenv.config()
 
 const app = server(dBConnection)
 const PORT: any = process.env.PORT || 2000

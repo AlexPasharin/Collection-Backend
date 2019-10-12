@@ -27,7 +27,6 @@ export class dbConnection {
     this.checkHealth()
   }
 
-
   checkHealth = () => {
     this.dbInstance.raw('select 1+1 as result')
       .then(() => console.log("Successfully established connection"))
@@ -121,7 +120,7 @@ export class dbConnection {
       this.dbInstance('releases')
         .where({ id: release.id })
         .update(release)
-        .then(() => this.getRelease(release.id))
+        .then(this.getRelease(release.id))
 
   getReleaseTracks: (release_id: any) => dbQueryFunc =
     release_id => () =>

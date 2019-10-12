@@ -100,9 +100,20 @@ export const setUpRestEndPoints = (app: Express, dBConnection: dbConnection) => 
     )
   })
 
-  app.options('/rest/release', cors({ origin: process.env.CORS_ORIGIN_URL }))
+  const corsOptions = {
+    origin: function (origin, callback) {
+      if (origin !== process.env.CORS_ORIGIN_URL) {
+        callback("Not allowed", false)
+      } else {
+        callback(null, true)
+      }
+    },
+    preflightContinue: true
+  }
 
-  app.post('/rest/release', cors({ origin: process.env.CORS_ORIGIN_URL }), (req, res) => {
+  app.options('/rest/release', cors(corsOptions))
+
+  app.post('/rest/release', cors(corsOptions), (req, res) => {
     handler(
       dBConnection.addRelease(req.body),
       res,
@@ -110,7 +121,7 @@ export const setUpRestEndPoints = (app: Express, dBConnection: dbConnection) => 
     )
   })
 
-  app.put('/rest/release', cors({ origin: process.env.CORS_ORIGIN_URL }), (req, res) => {
+  app.put('/rest/release', cors(corsOptions), (req, res) => {
     handler(
       dBConnection.updateRelease(req.body),
       res,
