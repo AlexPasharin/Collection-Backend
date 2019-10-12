@@ -146,5 +146,16 @@ export const setUpRestEndPoints = (app: Express, dBConnection: dbConnection) => 
     )
   })
 
+  app.options('/rest/login', cors({ origin: true }))
+  app.post('/rest/login', (req, res) => {
+    const { password } = req.body
+
+    if (password === process.env.PASSWORD) {
+      successHandler(res)({ authenticated: true })
+    } else {
+      res.set("Access-Control-Allow-Origin", "*").status(403).json({ authenticated: false })
+    }
+  })
+
   return app
 }
