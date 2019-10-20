@@ -16,7 +16,7 @@ const psConfig = ({
 //   }
 // }
 
-export type dbQueryFunc = () => Promise<any[]>
+export type dbQueryFunc = () => Promise<any>
 
 export class dbConnection {
   dbInstance: any;
@@ -35,6 +35,19 @@ export class dbConnection {
         process.exit(1);
       });
   }
+
+  insert: (data: any, tableName: string) => Promise<any[]> =
+    async (data, tableName) => {
+      const next_id = data.id ?
+        data.id : (await this.dbInstance(tableName).max('id'))[0].max + 1
+
+      return this.dbInstance(tableName)
+        .returning('id')
+        .insert({
+          id: next_id,
+          ...data
+        })
+    }
 
   getArtists: () => dbQueryFunc =
     () => () => this.dbInstance('artists').select()
@@ -94,25 +107,17 @@ export class dbConnection {
         })
 
   getLabels: () => dbQueryFunc =
-    () => () =>
-      this.dbInstance('labels')
-        .select()
+    () => () => this.dbInstance('labels').select()
 
   getFormats: () => dbQueryFunc =
-    () => () =>
-      this.dbInstance('formats')
-        .select()
+    () => () => this.dbInstance('formats').select()
 
   getCountries: () => dbQueryFunc =
-    () => () =>
-      this.dbInstance('countries')
-        .select()
+    () => () => this.dbInstance('countries').select()
 
-  addRelease: (release: any) => dbQueryFunc =
+  addRelease: (release: any) => () => Promise<({ release_id: Number })> =
     release => () =>
-      this.dbInstance('releases')
-        .returning('id')
-        .insert(release)
+      this.insert(release, 'releases')
         .then(([release_id]) => ({ release_id }))
 
   updateRelease: (release: any) => dbQueryFunc =
@@ -139,8 +144,7 @@ export class dbConnection {
         .where({ release_id })
 
   getCompositions: () => dbQueryFunc =
-    () => () =>
-      this.dbInstance('compositions').select()
+    () => () => this.dbInstance('compositions').select()
 }
 
 export default (new dbConnection)
