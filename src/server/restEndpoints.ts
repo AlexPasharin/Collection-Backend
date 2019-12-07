@@ -157,5 +157,26 @@ export const setUpRestEndPoints = (app: Express, dBConnection: dbConnection) => 
     }
   })
 
+  app.get('/rest/dumb', (req, res) => {
+    const { table } = req.query
+
+    handler(
+      () => dBConnection.dumb(table).then(() => `Table '${table}' has been seeded succesfully`),
+      res,
+      `Could not dumb table '${table}' to csv. Did you spell the name of the table right?`
+    )
+  })
+
+  app.get('/rest/dumb/all', (_, res) => {
+    const tables = ['artists', 'types', 'formats', 'labels', 'countries', 'entries', 'releases']
+    const dumbTables = table => dBConnection.dumb(table).then(() => `Table '${table}' has been seeded succesfully`)
+
+    handler(
+      () => Promise.all(tables.map(dumbTables)),
+      res,
+      `There has been an error in data dumbing`
+    )
+  })
+
   return app
 }

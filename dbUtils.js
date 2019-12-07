@@ -32,8 +32,12 @@ const seeder = (knex, tableName) =>
       return null
     })
 
+const dumb = (knex, tableName) =>
+  knex.raw(`\copy (select * from entries) to '/Users/aleksandrpasharin/materials/queen-collection-2/dumb/${tableName}.csv' With CSV HEADER QUOTE '''' FORCE QUOTE *;`)
+
 module.exports = {
   seeder,
-  createIfDoesntExist
+  createIfDoesntExist,
+  dumb
 }
 

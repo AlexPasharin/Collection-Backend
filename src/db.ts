@@ -145,6 +145,9 @@ export class dbConnection {
 
   getCompositions: () => dbQueryFunc =
     () => () => this.dbInstance('compositions').select()
+
+  dumb = tableName =>
+    this.dbInstance.raw(`\copy (select * from ${tableName}) to '${process.env.DUMB_PATH}/csv/${tableName}.csv' With CSV HEADER QUOTE '''' FORCE QUOTE *;`)
 }
 
 export default (new dbConnection)
