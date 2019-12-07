@@ -3,15 +3,13 @@
     "outDir": "lib",
     "module": "commonjs",
     "allowJs": true,
-    "declaration": true,
     "target": "es5",
     "lib": [
       "dom",
       "es2015",
       "es5",
       "es6"
-    ],
-    "rootDir": "src"
+    ]
   },
   "include": [
     "./**/*"
