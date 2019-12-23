@@ -17,11 +17,11 @@ const createIfDoesntExist = (knex, tableName, cb) =>
 
 const seeder = (knex, tableName) =>
   csv({
-    delimiter: "\t",
+    //    delimiter: "\t",
     checkType: true,
     nullObject: true
   })
-    .fromFile(`./csv/${tableName}.tsv`)
+    .fromFile(`./csv/${tableName}.csv`)
     .then(data => knex(tableName).insert(data))
     .then(() => console.log(`Table ${tableName} seeded`))
     .catch(err => {
@@ -32,12 +32,8 @@ const seeder = (knex, tableName) =>
       return null
     })
 
-const dumb = (knex, tableName) =>
-  knex.raw(`\copy (select * from entries) to '/Users/aleksandrpasharin/materials/queen-collection-2/dumb/${tableName}.csv' With CSV HEADER QUOTE '''' FORCE QUOTE *;`)
-
 module.exports = {
   seeder,
-  createIfDoesntExist,
-  dumb
+  createIfDoesntExist
 }
 

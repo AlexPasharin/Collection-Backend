@@ -1,12 +1,8 @@
 import * as knex from 'knex'
+import * as path from 'path'
+const psConfig = require("../knexfile.js")
 
-const psConfig = ({
-  client: 'pg',
-  connection: process.env.DATABASE_URL ? process.env.DATABASE_URL : {
-    host: 'localhost',
-    database: 'queencollection'
-  }
-})
+psConfig.connection.database = 'queencollection'
 
 // const msqlConnection = {
 //   client: 'mysql',
@@ -146,8 +142,11 @@ export class dbConnection {
   getCompositions: () => dbQueryFunc =
     () => () => this.dbInstance('compositions').select()
 
-  dumb = tableName =>
-    this.dbInstance.raw(`\copy (select * from ${tableName}) to '${process.env.DUMB_PATH}/csv/${tableName}.csv' With CSV HEADER QUOTE '''' FORCE QUOTE *;`)
+  dumb = tableName => {
+    const rootDir = path.dirname(process.mainModule.filename)
+    console.log(rootDir)
+    return this.dbInstance.raw(`\copy (select * from ${tableName}) to '${rootDir}/csv/${tableName}.csv' With CSV HEADER NULL 'null';`)
+  }
 }
 
 export default (new dbConnection)

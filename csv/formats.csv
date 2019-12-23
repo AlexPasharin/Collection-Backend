@@ -1,0 +1,23 @@
+id,description,hasSides
+10'',10'' Vinyl Single,t
+12'',12'' Vinyl Single,t
+3''CD,3'' Mini CD Single,f
+7'',7'' Vinyl Single,t
+BD,Blu-ray Disc,f
+BD+CD,Box Format: Long Play Compact Disc and Blu-ray Disc,f
+BD+DVD+CD,"Box Format: Long Play Compact Disc, Blu-ray Disc and DVD",f
+BD+DVD+CD+12'',"Box Format: Long Play Compact Disc, Blu-ray Disc, DVD and 12'' Vinyl Single",t
+CD,Long Play Compact Disc,f
+CD+DVD,Box Format: Long Play Compact Disc and DVD Disc,f
+CD+DVD+LP,"Box Format: Long Play Compact Disc, DVD and Long Play Vinyl",t
+CD+TC,Long Play Compact Disc + Tape Cassette,t
+CD+VHS,Box Format: Long Play Compact Disc and VHS Video Tape,f
+CD-R,Recordable Compact Disc,f
+CD-ROM,Long Play Data Compact Disc,f
+CDS,CD Single,f
+CDS+DVD,CD Single + DVD,f
+DVD,DVD Disc,f
+LP,Long Play Vinyl Record,t
+LP+12'',Box Format: Long Play and 12'' Vinyl Single,t
+TC,Tape Cassette,t
+VHS,VHS Video Tape,f

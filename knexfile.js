@@ -3,8 +3,8 @@ const config = ({
   connection: process.env.DATABASE_URL ? process.env.DATABASE_URL :
     {
       host: 'localhost',
-      //database: 'aleksandrpasharin',
-      database: 'queencollection'
+      database: 'aleksandrpasharin',
+      //database: 'queencollection'
     }
 })
 
