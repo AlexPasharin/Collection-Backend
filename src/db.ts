@@ -2,7 +2,7 @@ import * as knex from 'knex'
 import * as path from 'path'
 const psConfig = require("../knexfile.js")
 
-psConfig.connection.database = 'queencollection'
+// sConfig.connection.database = 'queencollection'
 
 // const msqlConnection = {
 //   client: 'mysql',
