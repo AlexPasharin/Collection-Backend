@@ -142,9 +142,11 @@ export class dbConnection {
   getCompositions: () => dbQueryFunc =
     () => () => this.dbInstance('compositions').select()
 
-  dumb = tableName => {
+  getNonQueenCollection: () => dbQueryFunc =
+    () => () => this.dbInstance('non_queen').select()
+
+  dump = tableName => {
     const rootDir = path.dirname(process.mainModule.filename)
-    console.log(rootDir)
     return this.dbInstance.raw(`\copy (select * from ${tableName}) to '${rootDir}/csv/${tableName}.csv' With CSV HEADER NULL 'null';`)
   }
 }

@@ -6,7 +6,8 @@ exports.seed = async knex => {
     seeder(knex, 'types'),
     seeder(knex, 'formats'),
     seeder(knex, 'labels'),
-    seeder(knex, 'countries')
+    seeder(knex, 'countries'),
+    seeder(knex, 'non_queen')
   ])
 
   await seeder(knex, 'entries')
