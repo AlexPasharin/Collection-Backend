@@ -167,14 +167,6 @@ export const setUpRestEndPoints = (app: Express, dBConnection: dbConnection) => 
     )
   })
 
-  app.get('/rest/non_queen', (_, res) =>
-    handler(
-      dBConnection.getNonQueenCollection(),
-      res,
-      `Could not retrieve non-queen related collection from the database`
-    )
-  )
-
   app.get('/rest/dump/all', (_, res) => {
     const tables = ['artists', 'types', 'formats', 'labels', 'countries', 'entries', 'releases', 'non_queen']
     const dumpTables = table => dBConnection.dump(table).then(() => `Table '${table}' has been seeded succesfully`)
@@ -185,6 +177,14 @@ export const setUpRestEndPoints = (app: Express, dBConnection: dbConnection) => 
       `There has been an error in data dumping`
     )
   })
+
+  app.get('/rest/non_queen', (_, res) =>
+    handler(
+      dBConnection.getNonQueenCollection(),
+      res,
+      `Could not retrieve non-queen related collection from the database`
+    )
+  )
 
   return app
 }
