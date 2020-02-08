@@ -22,10 +22,9 @@ const seeder = (knex, tableName) =>
     nullObject: true
   })
     .fromFile(`./csv/${tableName}.csv`)
-    .then(data => {
-      console.log(data)
-      //      knex(tableName).del()
-      knex(tableName).insert(data)
+    .then(async data => {
+      await knex(tableName).del()
+      return knex(tableName).insert(data)
     })
     .then(() => console.log(`Table ${tableName} seeded`))
     .catch(err => {
