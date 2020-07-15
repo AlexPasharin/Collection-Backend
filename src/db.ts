@@ -146,7 +146,7 @@ export class dbConnection {
     () => () => this.dbInstance('non_queen').select()
 
   dump = tableName => {
-    const rootDir = path.dirname(process.mainModule.filename)
+    const rootDir = path.dirname((process as any).mainModule.filename)
     return this.dbInstance.raw(`\copy (select * from ${tableName}) to '${rootDir}/csv/${tableName}.csv' With CSV HEADER NULL 'null';`)
   }
 }
