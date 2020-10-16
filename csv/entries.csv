@@ -345,7 +345,6 @@ id,name,type,release_date,artist_id,entry_artist_id
 352,Champions Of The World,20,1995-11-06,1,null
 353,The Making Of 'A Night At The Opera',20,2006-03-20,1,null
 354,Days Of Our Lives,20,2011-11-28,1,null
-355,Rare Live,21,1989-06-21,1,null
 356,Who Wants To Live Forever / A Kind Of Magic,9,1986-10-20,1,null
 357,Bohemian Rhapsody / Crazy Little Thing Called Love,9,1987-03-30,1,null
 358,Lover Of Life Singer Of Songs,13,2006,19,null
@@ -388,3 +387,11 @@ id,name,type,release_date,artist_id,entry_artist_id
 395,Somebody To Love,6,1993-05-06,89,null
 396,Iron Eagle: Original Motion Picture Soundtrack,2,1986-07-23,3,null
 397,Live USA (Bohemian Rhapsody),5,,1,null
+398,You Are The Champions,6,2020-05-01,1,75
+355,Rare Live,18,1989-06-21,1,null
+399,Live Around The World,3,2020-10-02,1,75
+400,Live Around The World,13,2020-10-02,1,75
+401,Singles Collection 1,13,2008-11-17,1,null
+402,Singles Collection 2,13,2009-06-15,1,null
+403,Singles Collection 3,13,2010-05-31,1,null
+404,Singles Collection 4,13,2010-10-18,1,null
