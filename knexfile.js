@@ -4,7 +4,8 @@ const config = ({
     {
       host: 'localhost',
       //  database: 'aleksandrpasharin',
-      database: 'queencollection'
+      database: 'queencollection',
+      ssl: true
     }
 })
 
