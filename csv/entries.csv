@@ -90,7 +90,6 @@ id,name,type,release_date,artist_id,entry_artist_id
 92,The Miracle,6,1989-11-27,1,null
 93,Innuendo,6,1991-01-14,1,null
 94,I'm Going Slightly Mad,6,1991-03-04,1,null
-95,Headlong,6,1991-05-13,1,null
 96,These Are The Days Of Our Lives,6,1991-09-05,1,null
 97,The Show Must Go On,6,1991-10-14,1,null
 98,"\""We Will Rock You\"" and \""We Are The Champions\"" (Ruined By Rick Rubin)",6,1991,1,null
@@ -326,7 +325,6 @@ id,name,type,release_date,artist_id,entry_artist_id
 333,Greatest Hits,19,1992-10-13,1,null
 334,Made In Heaven - The Films,19,1996-11-11,1,null
 335,Greatest Karaoke Flix/Greatest Karaoke Hits,19,1998-11-18,1,null
-336,Queen Rocks,19,1998-11-09,1,null
 337,Greatest Flix III,19,1999-12-06,1,null
 338,Greatest Video Hits I,19,2002-10-14,1,null
 339,Greatest Video Hits II,19,2003-11-03,1,null
@@ -339,9 +337,6 @@ id,name,type,release_date,artist_id,entry_artist_id
 346,Party At The Palace,18,2002,3,null
 347,Five Live,18,2000-11-06,41,null
 348,Lover Of Life Singer Of Songs,19,2006,19,null
-349,The Magic Years Volume One,20,1987-11-30,1,null
-350,The Magic Years Volume Two,20,1987-11-30,1,null
-351,The Magic Years Volume Three,20,1987-11-30,1,null
 352,Champions Of The World,20,1995-11-06,1,null
 353,The Making Of 'A Night At The Opera',20,2006-03-20,1,null
 354,Days Of Our Lives,20,2011-11-28,1,null
@@ -395,3 +390,18 @@ id,name,type,release_date,artist_id,entry_artist_id
 402,Singles Collection 2,13,2009-06-15,1,null
 403,Singles Collection 3,13,2010-05-31,1,null
 404,Singles Collection 4,13,2010-10-18,1,null
+405,Rock & Roll Hall Of Fame 29 March 2019,7,2020-08-29,90,null
+95,Headlong,6,1991-01-17,1,null
+406,Stone Cold Crazy,26,1992,1,null
+407,Queen ‎Rocks (Volume One),27,1990,1,null
+408,How To Compose Popular Songs That Will Sell,1,2011-02-07,91,null
+409,All-American Alien Boy,1,1976,92,null
+410,Scrubs The Complete Second Season,28,null,93,null
+411,The Great Pretender,20,2012-09-24,19,null
+412,Box Of Flix/Greatest Flix I & II,19,1991-10-28,1,null
+349,Magic Years Volume One,20,1987-11-30,1,null
+350,Magic Years Volume Two,20,1987-11-30,1,null
+351,Magic Years Volume Three,20,1987-11-30,1,null
+336,Queen Rocks The Video,19,1998-11-09,1,null
+413,Queen Box Set,18,1998-11-30,1,null
+414,I'm A Woman,6,2020-11-27,94,null
