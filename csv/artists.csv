@@ -19,13 +19,11 @@ id,name
 59,Ex-it
 10,Felix and Arty
 41,Five
-32,Five + Queen 
 44,Foo Fighters
 19,Freddie Mercury
 20,Freddie Mercury & Montserrat Caballe
 82,George Michael
 5,George Michael and Queen with Lisa Stansfield
-45,Guns N' Roses 
 50,Hank Marvin feat. Brian May
 28,Jimmy Nail
 85,John Deacon
@@ -45,7 +43,7 @@ id,name
 75,Queen + Adam Lambert
 26,Queen + Paul Rodgers
 49,Queen + Vanguard
-33,Queen vs The Miami Project 
+33,Queen vs The Miami Project
 6,Queen/Wyclef Jean featuring Pras & Free
 2,Queen+
 70,Queens' Own
@@ -76,8 +74,8 @@ id,name
 71,Valensia
 29,Vanilla Ice
 3,Various Artists
-30,We Will Rock You Original London Cast 
-31,We Will Rock You Original Madrid Cast 
+30,We Will Rock You Original London Cast
+31,We Will Rock You Original Madrid Cast
 16,"Weebl and May feat. Brian Blessed, King Of The Hawkmen"
 62,Worlds Apart
 63,Сектор Газа
@@ -90,3 +88,11 @@ id,name
 92,Ian Hunter
 93,Bill Lawrence
 94,Woman
+45,Guns N' Roses
+32,Five + Queen
+95,Holly Johnson
+96,Eminem
+97,Jon Brewer
+98,Glee Cast
+99,Taylor Hawkins & The Coattail Riders
+100,Seth MacFarlane
