@@ -269,7 +269,6 @@ id,name,type,release_date,artist_id,entry_artist_id
 280,Back To Queen,14,1998,1,null
 281,The Greatest Hits III-IV,14,1999,1,null
 282,Live At The Marquee,5,null,8,null
-283,We Are The Champions,6,1992,50,null
 284,Enter Sandman,6,1991-07-30,51,null
 285,Hallo Spaceboy,6,1996-02-19,42,null
 286,Bohemian Rhapsody,6,1996,52,null
@@ -314,6 +313,7 @@ id,name,type,release_date,artist_id,entry_artist_id
 325,A Night At The Odeon,18,2015-11-20,1,null
 326,The Freddie Mercury Tribute Concert,18,1992-11-23,1,2
 327,Greatest Flix,19,1981-11-02,1,null
+283,We Are The Champions,6,1992,105,50
 328,Queen Collection - The Video Featuring 15 Of Their Best,19,1984,1,null
 329,The Works Video EP,19,1984-11-19,1,null
 330,The Miracle Video EP,19,1989-11-27,1,null
@@ -443,3 +443,7 @@ id,name,type,release_date,artist_id,entry_artist_id
 451,Out Of My Hands,1,1995-02-09,102,null
 452,Claire,1,2002-03-01,103,null
 453,Wonderland,1,1992-09-07,104,null
+454,Pepsi Music 2004,27,2004,3,null
+455,16 Strokes: The Best Of Billy Squier,4,1995,23,null
+456,Into The Light,1,1992-10-19,105,null
+457,Zu & Co,4,2004-05-14,106,null
