@@ -227,7 +227,6 @@ id,name,type,release_date,artist_id,entry_artist_id
 237,Solo,13,2000-10-23,19,null
 238,Bohemian Rhapsody The Original Soundtrack,2,2018-10-19,1,null
 239,Mr. Sad Guy,14,null,19,null
-240,The Very Best,14,1994,19,null
 241,Star Profile,14,2000,19,null
 242,Gettin' Smile,1,1982-09-23,35,null
 243,Ghost Of A Smile,1,1997,35,null
@@ -265,9 +264,7 @@ id,name,type,release_date,artist_id,entry_artist_id
 276,Queen In Nuce,14,1995,3,null
 277,Her Majesty's Jewels The Studio Rarities,14,1997,1,null
 278,Complete Rare Demo & Studio Live,14,null,1,null
-279,Greatest Hits III,14,1995,1,null
 280,Back To Queen,14,1998,1,null
-281,The Greatest Hits III-IV,14,1999,1,null
 282,Live At The Marquee,5,null,8,null
 284,Enter Sandman,6,1991-07-30,51,null
 285,Hallo Spaceboy,6,1996-02-19,42,null
@@ -458,3 +455,16 @@ id,name,type,release_date,artist_id,entry_artist_id
 466,Tributo A Queen - Los Grandes Del Rock En Español,1,1997-10-22,3,null
 467,In From The Storm,1,1995,3,null
 468,Hands All Over,1,2010-09-15,108,null
+469,Nothing Has Changed,4,2014-11-18,42,null
+470,The Platinum Collection,4,2005-11-07,42,null
+471,Night And The City Music From Original Motion Picture Soundtrack,2,1992,3,null
+472,The Outsider Tour Live,3,2022-09-30,7,null
+473,I've Got News For You,6,1991-02-25,107,null
+474,"Sex, Age & Death",1,2001-10-01,91,null
+475,Reach For The Sky The Anthology,4,1996-07-25,23,null
+476,The Drums Are Back,1,1992-05-25,109,null
+477,Carmine Appice's Guitar Zeus,1,1996,110,null
+478,Goodbye Lament,26,2000,101,null
+479,Two's Company The Duets,4,2006-11-06,111,null
+480,Earthrise - The Rainforest Album,4,1992,3,null
+481,Ultra Rare Trax (1967 - 1994),14,1995,1,null
