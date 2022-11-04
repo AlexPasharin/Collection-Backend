@@ -1,21 +1,13 @@
 {
   "compilerOptions": {
+    // "esModuleInterop": true,
+    // "allowSyntheticDefaultImports": true,
     "outDir": "lib",
     "module": "commonjs",
     "allowJs": true,
     "target": "es5",
-    "lib": [
-      "dom",
-      "es2015",
-      "es5",
-      "es6"
-    ]
+    "lib": ["dom", "es2015", "es5", "es6"]
   },
-  "include": [
-    "./**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  "include": ["./**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

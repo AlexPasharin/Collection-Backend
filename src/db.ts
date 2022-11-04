@@ -1,5 +1,6 @@
-import * as knex from "knex";
+import knex from "knex";
 import * as path from "path";
+
 const psConfig = require("../knexfile.js");
 
 // sConfig.connection.database = 'queencollection'
@@ -18,9 +19,18 @@ export class dbConnection {
   dbInstance: any;
 
   constructor() {
-    this.dbInstance = knex(psConfig);
+    this.dbInstance = knex({
+      client: "pg",
+      connection: process.env.DATABASE_URL
+        ? `${process.env.DATABASE_URL}?ssl=true`
+        : {
+            host: "localhost",
+            //  database: 'aleksandrpasharin',
+            database: "queencollection",
+          },
+    });
 
-    this.checkHealth();
+    // this.checkHealth();
   }
 
   checkHealth = () => {
@@ -48,6 +58,9 @@ export class dbConnection {
         ...data,
       });
   };
+
+  getAllReleases = ({ skip = 0 }: { skip?: number }) =>
+    this.dbInstance("releases").select().orderBy("id").limit(10).offset(skip);
 
   getArtists: () => dbQueryFunc = () => () =>
     this.dbInstance("artists").select();
@@ -143,6 +156,8 @@ export class dbConnection {
       `\copy (select * from ${tableName}) to '${rootDir}/csv/${tableName}.csv' With CSV HEADER NULL 'null';`
     );
   };
+
+  close = () => this.dbInstance.destroy();
 }
 
 export default new dbConnection();
