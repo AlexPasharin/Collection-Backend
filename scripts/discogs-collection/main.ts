@@ -1,14 +1,10 @@
 import * as puppeteer from "puppeteer";
 
-import { dbConnection } from "../src/db";
-
-const connection = new dbConnection();
-
 const delay = (milliseconds) => new Promise((r) => setTimeout(r, milliseconds));
 
-const batch = 2;
+let lastReleaseID;
 
-connection.getAllReleases({ skip: 10 * batch }).then((releases) => {
+export function mainJob(releases) {
   puppeteer
     .launch({ headless: false, defaultViewport: null })
     .then(async (browser) => {
@@ -49,33 +45,57 @@ connection.getAllReleases({ skip: 10 * batch }).then((releases) => {
       const newPage = await browser.newPage();
 
       for (const release of releases) {
-        const { discogs_url } = release;
+        const { discogs_url, id } = release;
+        lastReleaseID = id;
 
         if (discogs_url) {
           await newPage.goto(release.discogs_url);
           await delay(1000);
 
-          await newPage.evaluate(() => {
-            const notInCollection =
-              Array.from(document.querySelectorAll("div")).filter((d) =>
-                d.className.includes("collection")
-              ).length === 0;
+          const error = await newPage.evaluate(() => {
+            try {
+              const notInCollection =
+                Array.from(document.querySelectorAll("div")).filter((d) =>
+                  d.className.includes("collection")
+                ).length === 0;
 
-            if (notInCollection) {
-              const btns = document.querySelectorAll("button");
+              if (notInCollection) {
+                const btns = document.querySelectorAll("button");
 
-              const addToCollectionBtn = Array.prototype.find.call(
-                btns,
-                (b: HTMLButtonElement) =>
-                  b.innerText.toLowerCase().includes("add to collection")
-              );
+                const addToCollectionBtn = Array.prototype.find.call(
+                  btns,
+                  (b: HTMLButtonElement) =>
+                    b.innerText.toLowerCase().includes("add to collection")
+                );
 
-              addToCollectionBtn.click();
+                addToCollectionBtn.click();
+              }
+            } catch (error) {
+              return JSON.stringify(error, null, 4);
             }
           });
+
+          if (error) {
+            throw { releaseID: id, error };
+          }
 
           await delay(1000);
         }
       }
+
+      browser.close();
+    })
+    .catch((error) => {
+      console.error(error);
+
+      return error;
+    })
+    .then((error) => {
+      console.log("Last release id: ", lastReleaseID);
+
+      if (!error) {
+        console.log("SUCCESS");
+        process.exit(0);
+      }
     });
-});
+}

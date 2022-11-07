@@ -34,7 +34,6 @@ id,artist_name,name,format,comment,discogs_url,index_by
 29,Elton John,Goodbye Yellow Brick Road,CD,null,https://www.discogs.com/Elton-John-Goodbye-Yellow-Brick-Road/release/1965346,John
 30,Michael Jackson,Thriller,CD,null,https://www.discogs.com/Michael-Jackson-Thriller/release/248165,Jackson
 31,Michael Jackson,Bad,CD,null,https://www.discogs.com/Michael-Jackson-Bad/release/12871809,Jackson
-32,Michael Jackson,Dangerous,CD,null,https://www.discogs.com/Michael-Jackson-Dangerous/release/12260599,Jackson
 33,Judas Priest,Living After Midnight (The Best of Judas Priest),CD,null,https://www.discogs.com/Judas-Priest-Living-After-Midnight-The-Best-of-Judas-Priest/release/2540608,null
 34,Kemopetrol,Slowed Down,CD,null,https://www.discogs.com/Kemopetrol-Slowed-Down/release/2084648,null
 35,Kingston Wall,I,CD,null,https://www.discogs.com/Kingston-Wall-I/release/5444483,null
@@ -57,6 +56,7 @@ Kwan", The Die Is Cast,CD,null,https://www.discogs.com/Kwan-The-Die-Is-Cast/rele
 55,Alanis Morissette,Jagged Little Pill,CD,null,https://www.discogs.com/Alanis-Morissette-Jagged-Little-Pill/release/443973,Morissette
 54,Nada Surf,High / Low,CD,null,https://www.discogs.com/Nada-Surf-High-Low/release/1148164,null
 56,Alanis Morissette,Supposed Former Infatuation Junkie,CD,null,https://www.discogs.com/Alanis-Morissette-Supposed-Former-Infatuation-Junkie/release/381338,Morissette
+32,Michael Jackson,Dangerous,CD,null,https://www.discogs.com/release/887403-Michael-Jackson-Dangerous,Jackson
 58,Muse,Absolution,CD,null,https://www.discogs.com/Muse-Absolution/release/7781939,null
 57,Alanis Morissette,So-Called Chaos,CD,null,https://www.discogs.com/Alanis-Morissette-So-Called-Chaos/release/381322,Morissette
 59,Muse,The Resistance,CD,null,https://www.discogs.com/Muse-The-Resistance/release/1921374,null
@@ -120,7 +120,6 @@ Live",Freaks,CD single,null,https://www.discogs.com/Live-Freaks/release/2899045,
 120,Muse,Undisclosed Desires,CD single,null,https://www.discogs.com/Muse-Undisclosed-Desires/release/2171921,null
 121,Muse,Uprising,CD single,null,https://www.discogs.com/Muse-Uprising/release/8405315,null
 122,Billie Myers,Kiss The Rain,CD single,null,https://www.discogs.com/Billie-Myers-Kiss-The-Rain/release/1156340,Myers
-123,No Doubt,Don't Speak,CD single,null,discogs.com/No-Doubt-Dont-Speak/release/394002,null
 124,Oasis,Supersonic,CD single,null,https://www.discogs.com/Oasis-Supersonic/release/582564,null
 125,Oasis,Shakermaker,CD single,null,https://www.discogs.com/Oasis-Shakermaker/release/1588840,null
 126,Oasis,Whatever,CD single,null,https://www.discogs.com/Oasis-Whatever/release/486891,null
@@ -212,7 +211,6 @@ Live",Freaks,CD single,null,https://www.discogs.com/Live-Freaks/release/2899045,
 211,George Michael,Older,CD,null,https://www.discogs.com/release/4046572-George-Michael-Older,Michael
 212,David Bowie,Hours,CD,null,https://www.discogs.com/release/9209502-David-Bowie-Hours,Bowie
 213,The Beatles,Anthology 2,CD,null,https://www.discogs.com/release/1718333-The-Beatles-Anthology-2,Beatles
-214,U2,Zooropa,CD,null,null,null
 215,Glee Cast,"Glee: The Music, Season 4, Volume 1 - From Lima To New York",CD,null,https://www.discogs.com/release/4176283-Glee-Cast-Glee-The-Music-Season-4-Volume-1-From-Lima-To-New-York,null
 216,Glee Cast,"Glee: The Music, Season Three, Volume 7",CD,null,https://www.discogs.com/release/11300301-Glee-Cast-Glee-The-Music-Season-Three-Volume-7,null
 217,Glee Cast,Glee Sings The Beatles,CD,null,https://www.discogs.com/release/4965458-Glee-Cast-Glee-Sings-The-Beatles,null
@@ -228,7 +226,6 @@ Live",Freaks,CD single,null,https://www.discogs.com/Live-Freaks/release/2899045,
 227,The Beatles,Real Love,CD,null,https://www.discogs.com/release/13494217-The-Beatles-Real-Love,Beatles
 228,Extreme,Extreme II: Pornograffitti (A Funked Up Fairy Tale),CD,null,https://www.discogs.com/release/9401064-Extreme-Extreme-II-Pornograffitti-A-Funked-Up-Fairy-Tale,null
 229,Muse,Origin Of Symmetry,CD,null,https://www.discogs.com/release/381229-Muse-Origin-Of-Symmetry,null
-230,Led Zeppelin,In Through The Out Door,CD,null,https://www.discogs.com/master/4474-Led-Zeppelin-In-Through-The-Out-Door,null
 231,Led Zeppelin,Presence,CD,null,https://www.discogs.com/release/14907430-Led-Zeppelin-Presence,null
 232,Foo Fighters,Wasting Light,CD,null,https://www.discogs.com/release/2814908-Foo-Fighters-Wasting-Light,null
 233,The Beatles,Anthology 3,CD,null,https://www.discogs.com/release/1507806-The-Beatles-Anthology-3,Beatles
@@ -280,6 +277,7 @@ Live",Freaks,CD single,null,https://www.discogs.com/Live-Freaks/release/2899045,
 279,Pulp,This Is Hardcore,CD,null,https://www.discogs.com/release/313066-Pulp-This-Is-Hardcore,null
 280,David Bowie,Black Tie White Noise,CD,null,https://www.discogs.com/release/1053766-David-Bowie-Black-Tie-White-Noise,Bowie
 281,David Bowie,Earthling,CD,null,https://www.discogs.com/release/132275-David-Bowie-Earthling,Bowie
+230,Led Zeppelin,In Through The Out Door,CD,null,https://www.discogs.com/release/1083960-Led-Zeppelin-In-Through-The-Out-Door,null
 282,David Bowie / Trevor Jones,Labyrinth (From The Original Soundtrack Of The Jim Henson Film),CD,null,https://www.discogs.com/release/1545243-David-Bowie-And-Original-Score-By-Trevor-Jones-Labyrinth-From-The-Original-Soundtrack-Of-The-Jim-Hen,Bowie
 283,Alanis Morissette,Jagged Little Pill Acoustic,CD,null,https://www.discogs.com/release/490463-Alanis-Morissette-Jagged-Little-Pill-Acoustic,Morissette
 284,Alanis Morissette,Flavors Of Entanglement,CD,null,https://www.discogs.com/release/1393866-Alanis-Morissette-Flavors-Of-Entanglement,Morissette
@@ -318,3 +316,5 @@ Live",Freaks,CD single,null,https://www.discogs.com/Live-Freaks/release/2899045,
 315,Steely Dan,Aja,CD,null,https://www.discogs.com/release/8938104-Steely-Dan-Aja,null
 316,Rainbow,Ritchie Blackmore's Rainbow,CD,null,https://www.discogs.com/release/7808683-Rainbow-Ritchie-Blackmores-Rainbow-,null
 317,David Bowie,Never Let Me Down,CD,"original release, includes ""Too Dizzy""",https://www.discogs.com/release/5639771-David-Bowie-,Bowie
+123,No Doubt,Don't Speak,CD single,null,https://www.discogs.com/No-Doubt-Dont-Speak/release/394002,null
+214,U2,Zooropa,CD,null,https://www.discogs.com/release/12751305-U2-Zooropa,null

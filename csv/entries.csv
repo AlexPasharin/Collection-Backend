@@ -301,7 +301,6 @@ id,name,type,release_date,artist_id,entry_artist_id
 316,Live In Japan,18,1983-10-03,1,null
 317,We Will Rock You/Rock Montreal,18,1984-09-10,1,null
 318,Live In Rio,18,1985-05-13,1,null
-319,Live In Budapest/Hungarian Rhapsody,18,1987-02-16,1,null
 320,At Wembley/Live At Wembley Stadium,18,1990-12-03,1,null
 321,We Are The Champions Final Live In Japan,18,1992-09-02,1,null
 322,Queen's Day,18,2002,1,null
@@ -310,6 +309,7 @@ id,name,type,release_date,artist_id,entry_artist_id
 325,A Night At The Odeon,18,2015-11-20,1,null
 326,The Freddie Mercury Tribute Concert,18,1992-11-23,1,2
 327,Greatest Flix,19,1981-11-02,1,null
+319,Live In Budapest/Hungarian Rhapsody Live In Budapest,18,1987-02-16,1,null
 283,We Are The Champions,6,1992,105,50
 328,Queen Collection - The Video Featuring 15 Of Their Best,19,1984,1,null
 329,The Works Video EP,19,1984-11-19,1,null

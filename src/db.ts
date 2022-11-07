@@ -19,16 +19,7 @@ export class dbConnection {
   dbInstance: any;
 
   constructor() {
-    this.dbInstance = knex({
-      client: "pg",
-      connection: process.env.DATABASE_URL
-        ? `${process.env.DATABASE_URL}?ssl=true`
-        : {
-            host: "localhost",
-            //  database: 'aleksandrpasharin',
-            database: "queencollection",
-          },
-    });
+    this.dbInstance = knex(psConfig);
 
     // this.checkHealth();
   }
@@ -59,8 +50,18 @@ export class dbConnection {
       });
   };
 
-  getAllReleases = ({ skip = 0 }: { skip?: number }) =>
-    this.dbInstance("releases").select().orderBy("id").limit(10).offset(skip);
+  getAllReleases = ({
+    batchSize,
+    skip = 0,
+  }: {
+    batchSize: number;
+    skip?: number;
+  }) =>
+    this.dbInstance("releases")
+      .select()
+      .orderBy("id")
+      // .limit(batchSize)
+      .offset(skip);
 
   getArtists: () => dbQueryFunc = () => () =>
     this.dbInstance("artists").select();
@@ -146,7 +147,7 @@ export class dbConnection {
     this.dbInstance("compositions").select();
 
   getNonQueenCollection: () => dbQueryFunc = () => () =>
-    this.dbInstance("non_queen").select();
+    this.dbInstance("non_queen").select().orderBy("id");
 
   getMovies: () => dbQueryFunc = () => () => this.dbInstance("movies").select();
 
