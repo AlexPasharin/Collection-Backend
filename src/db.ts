@@ -21,7 +21,7 @@ export class dbConnection {
   constructor() {
     this.dbInstance = knex(psConfig);
 
-    // this.checkHealth();
+    //this.checkHealth();
   }
 
   checkHealth = () => {

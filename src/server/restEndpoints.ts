@@ -2,6 +2,7 @@ import { Express } from "express";
 import * as cors from "cors";
 
 import { dbConnection, dbQueryFunc } from "../db";
+import { readFile, readFileSync } from "fs";
 
 const successHandler = (res) => (data) =>
   res.set("Access-Control-Allow-Origin", "*").json(data);
@@ -19,6 +20,8 @@ export const setUpRestEndPoints = (
   app: Express,
   dBConnection: dbConnection
 ) => {
+  const useJsons = process.env.USE_JSONS !== "false";
+
   app.get("/rest/artists", (_, res) =>
     handler(
       dBConnection.getArtists(),
@@ -200,7 +203,9 @@ export const setUpRestEndPoints = (
 
   app.get("/rest/non_queen", (_, res) =>
     handler(
-      dBConnection.getNonQueenCollection(),
+      useJsons
+        ? getNonQueenEntriesFromJSON
+        : dBConnection.getNonQueenCollection(),
       res,
       `Could not retrieve non-queen related collection from the database`
     )
@@ -215,4 +220,28 @@ export const setUpRestEndPoints = (
   );
 
   return app;
+};
+
+type DataGetter = (path: string) => dbQueryFunc;
+
+const getJSONData: DataGetter = (path: string) => () => {
+  return new Promise((resolve, reject) => {
+    readFile(`data/${path}.json`, { encoding: "utf8" }, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(JSON.parse(data));
+      }
+    });
+  });
+};
+
+const getNonQueenEntriesFromJSON: dbQueryFunc = async () => {
+  const data = await getJSONData("non_queen_collection")();
+
+  return data
+    .map(({ artist, releases }) =>
+      releases.map((r) => ({ ...r, artist_name: artist }))
+    )
+    .flat();
 };
