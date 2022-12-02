@@ -39,7 +39,7 @@
     "@types/node": "^10.0.4",
     "@types/open": "^6.2.1",
     "@types/ramda": "^0.28.20",
-    "nodemon": "^1.17.3",
+    "nodemon": "^2.0.20",
     "ts-node": "^10.9.1"
   }
 }
