@@ -239,6 +239,8 @@ const getJSONData: DataGetter = (path: string) => () => {
 const getNonQueenEntriesFromJSON: dbQueryFunc = async () => {
   const data = await getJSONData("non_queen_collection")();
 
+  console.log("Got data");
+
   return data
     .map(({ artist, releases }) =>
       releases.map((r) => ({ ...r, artist_name: artist }))
